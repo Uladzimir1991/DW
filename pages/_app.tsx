@@ -1,8 +1,21 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import {GlobalStyle} from "../styles/globalStyle";
+import { Normalize } from 'styled-normalize';
+import type { AppProps } from 'next/app';
+import Home from "./index";
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ pageProps }: AppProps) {
+  return (
+      <>
+        <Normalize/>
+        <GlobalStyle/>
+          <Head>
+              <title>Тест</title>
+              <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          </Head>
+        <Home {...pageProps} />
+      </>
+  )
 }
 
 export default MyApp
